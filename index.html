@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seperas - Beri Kesegaran</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a2463 0%, #1e3a8a 100%);
+        }
+        
+        .orange-gradient {
+            background: linear-gradient(135deg, #ff9a00 0%, #ff6200 100%);
+        }
+        
+        .leaf-shadow {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .pulse-button {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 154, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 154, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 154, 0, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://z-cdn-media.chatglm.cn/files/08ad4fdf-988c-4026-990b-b92ec091a2c8_Seperas.jpeg?auth_key=1793410878-439f05a36a5e4254912c5d0926a82c1c-0-832f3b16f77512b483b0d5bfa7d5913a" alt="Seperas Logo" class="h-12 w-12 mr-2">
+                <span class="text-2xl font-bold text-blue-900">Seperas</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#beranda" class="text-gray-700 hover:text-orange-500 transition">Beranda</a>
+                <a href="#tentang" class="text-gray-700 hover:text-orange-500 transition">Tentang</a>
+                <a href="#produk" class="text-gray-700 hover:text-orange-500 transition">Produk</a>
+                <a href="#kontak" class="text-gray-700 hover:text-orange-500 transition">Kontak</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-md">
+            <a href="#beranda" class="block py-2 text-gray-700 hover:text-orange-500 transition">Beranda</a>
+            <a href="#tentang" class="block py-2 text-gray-700 hover:text-orange-500 transition">Tentang</a>
+            <a href="#produk" class="block py-2 text-gray-700 hover:text-orange-500 transition">Produk</a>
+            <a href="#kontak" class="block py-2 text-gray-700 hover:text-orange-500 transition">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-bg text-white py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Seperas - Beri Kesegaran</h1>
+                <p class="text-xl mb-8">Nikmati kesegaran alami dari jeruk peras pilihan, langsung dari kebun ke tangan Anda. Tanpa tambahan pemanis, 100% murni!</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/6281234567890?text=Halo%20Seperas,%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank" class="orange-gradient text-white font-bold py-3 px-6 rounded-full hover:shadow-lg transition transform hover:scale-105 pulse-button">
+                        <i class="fab fa-whatsapp mr-2"></i> Pesan Sekarang
+                    </a>
+                    <a href="#produk" class="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-full hover:bg-white hover:text-blue-900 transition transform hover:scale-105">
+                        Lihat Produk
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative floating">
+                    <img src="https://picsum.photos/seed/orangejuice/500/500.jpg" alt="Jeruk Peras Segar" class="rounded-full w-80 h-80 object-cover shadow-2xl">
+                    <div class="absolute -bottom-4 -right-4 bg-white rounded-full p-4 shadow-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <span class="ml-1 font-bold text-gray-800">4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-16 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/seed/oranges/600/400.jpg" alt="Jeruk Segar" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">Mengapa Memilih Seperas?</h2>
+                    <p class="text-gray-700 mb-6">Di Seperas, kami berkomitmen untuk memberikan Anda jus jeruk terbaik dengan kualitas tertinggi. Setiap tetes jus kami adalah perwakilan dari kesegaran alami.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-orange-500 text-white rounded-full p-2 mr-4">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">100% Alami</h3>
+                                <p class="text-gray-600">Tanpa tambahan pemanis, pengawet, atau bahan kimia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-500 text-white rounded-full p-2 mr-4">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Jeruk Pilihan</h3>
+                                <p class="text-gray-600">Hanya jeruk terbaik dari perkebunan berkualitas</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-500 text-white rounded-full p-2 mr-4">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">Pengiriman Cepat</h3>
+                                <p class="text-gray-600">Dikirim dalam kondisi segar langsung ke rumah Anda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produk" class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Produk Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://picsum.photos/seed/orangejuice1/400/300.jpg" alt="Jeruk Peras Original" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Jeruk Peras Original</h3>
+                        <p class="text-gray-600 mb-4">Kesegaran murni dari jeruk pilihan tanpa tambahan apapun</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-500">Rp 25.000</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Seperas,%20saya%20ingin%20memesan%20Jeruk%20Peras%20Original" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition inline-flex items-center">
+                                <i class="fab fa-whatsapp mr-2"></i>Pesan Via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://picsum.photos/seed/orangejuice2/400/300.jpg" alt="Jeruk Peras Madu" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Jeruk Peras Madu</h3>
+                        <p class="text-gray-600 mb-4">Perpaduan sempurna antara jeruk segar dan madu alami</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-500">Rp 30.000</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Seperas,%20saya%20ingin%20memesan%20Jeruk%20Peras%20Madu" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition inline-flex items-center">
+                                <i class="fab fa-whatsapp mr-2"></i>Pesan Via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://picsum.photos/seed/orangejuice3/400/300.jpg" alt="Jeruk Peras Jahe" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Jeruk Peras Jahe</h3>
+                        <p class="text-gray-600 mb-4">Kombinasi segar jeruk dengan sentuhan hangat jahe</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-500">Rp 30.000</span>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Seperas,%20saya%20ingin%20memesan%20Jeruk%20Peras%20Jahe" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition inline-flex items-center">
+                                <i class="fab fa-whatsapp mr-2"></i>Pesan Via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Apa Kata Pelanggan Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/person1/100/100.jpg" alt="Pelanggan 1" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Andi Pratama</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Jeruk perasnya benar-benar segar! Saya jadi rutin minum setiap pagi. Recommended!"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/person2/100/100.jpg" alt="Pelanggan 2" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Siti Nurhaliza</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Anak-anak saya suka sekali dengan jeruk peras madu. Sehat dan enak!"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/person3/100/100.jpg" alt="Pelanggan 3" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Budi Santoso</h4>
+                            <div class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Pengiriman cepat dan kemasan rapi. Jeruknya masih segar saat sampai."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Hubungi Kami</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
+                    <a href="https://wa.me/6281234567890?text=Halo%20Seperas,%20saya%20tertarik%20dengan%20produk%20Anda" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-full hover:bg-green-600 transition transform hover:scale-105 flex items-center">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                        <span class="font-bold text-lg">Hubungi WhatsApp</span>
+                    </a>
+                    <a href="https://instagram.com/seperas.id" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full hover:shadow-lg transition transform hover:scale-105 flex items-center">
+                        <i class="fab fa-instagram mr-3 text-xl"></i>
+                        <span class="font-bold text-lg">Ikuti Instagram</span>
+                    </a>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-6 text-center">Lokasi Kami</h3>
+                    <div class="h-96 rounded-lg overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sMonas!5e0!3m2!1sen!2sid!4v1629234766995!5m2!1sen!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-3 text-xl"></i>
+                            <span>Jl. Kesegaran No. 123, Jakarta Pusat</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-phone text-orange-500 mr-3 text-xl"></i>
+                            <span>+62 812-3456-7890</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <i class="fas fa-envelope text-orange-500 mr-3 text-xl"></i>
+                            <span>info@seperas.id</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <img src="https://z-cdn-media.chatglm.cn/files/08ad4fdf-988c-4026-990b-b92ec091a2c8_Seperas.jpeg?auth_key=1793410878-439f05a36a5e4254912c5d0926a82c1c-0-832f3b16f77512b483b0d5bfa7d5913a" alt="Seperas Logo" class="h-10 w-10 mr-2">
+                    <span class="text-xl font-bold">Seperas</span>
+                </div>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#beranda" class="hover:text-orange-400 transition">Beranda</a>
+                    <a href="#tentang" class="hover:text-orange-400 transition">Tentang</a>
+                    <a href="#produk" class="hover:text-orange-400 transition">Produk</a>
+                    <a href="#kontak" class="hover:text-orange-400 transition">Kontak</a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://instagram.com/seperas.id" target="_blank" class="hover:text-orange-400 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="hover:text-orange-400 transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-orange-400 transition">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-blue-800 text-center">
+                <p>&copy; 2023 Seperas. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-full transition-transform duration-300 z-50">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle mr-2"></i>
+            <span id="notification-text">Pesan berhasil dikirim!</span>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Show notification function
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notification-text');
+            
+            notificationText.textContent = message;
+            notification.style.transform = 'translateY(0)';
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateY(100%)';
+            }, 3000);
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
